@@ -20,11 +20,13 @@ Design a rental house information query system to provide user information about
 - **Spring Cloud** is used to provide infrastructure services.
 
 ## Design Diagrams
+### System Design
 ![Overview](/Overview.png)
+
+### DataBase Desgin
 ![MySQL Schema](/MySQLSchema.png)
 ![Memcached Schema](/Memcached.png)
 
-### Start MongoDB
 
 ## Getting Started
 
