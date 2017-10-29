@@ -26,7 +26,6 @@ Design a rental house information query system to provide user information about
 
 ### DataBase Desgin
 ![MySQL Schema](/MySQLSchema.png)
-![Memcached Schema](/Memcached.png)
 
 ### Back-End Architecture
 ![arch](/arch.png)
