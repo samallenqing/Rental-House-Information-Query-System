@@ -1,0 +1,10 @@
+myData = [[34.038810,-118.422711,' Jr 1 Bed in CENTURY CITYUpgraded Rooftop PoolGy'],
+[34.066038,-118.402413,'GORGEOUS LARGE 225 TOWNHOUSE IN PRIME BEVERLY HILLS LOCATIO'],
+[34.061900,-118.399500,'Modern Luxury 2 bedroom  2 bat'],
+[34.064209,-118.441112,'1 Bedroom in WestwoodNearby UCLASaunaHeated Poo'],
+[34.084655,-118.325435,'Open House Live Work 2 Bed 2 Bath in Larchmont Village WD Clubhous'],
+[34.038810,-118.422711,'Jr 1 Bed in CENTURY CITYCompletely Upgraded W Resort Feature'],
+[34.064209,-118.441112,'One Bedroom in WestwoodNearby UCLASaunaHeated Poo'],
+[34.087403,-118.367211,'22 in West HollywoodGymPoolACQuartz Countertop'],
+[34.084655,-118.325435,' 1BR1BA in Larchmont Village LiveWork Brand New Open House'],
+[34.061285,-118.441743,'1 BEDROOM  In Westwood Village  MUST SEE  CLOSE TO UCL']]

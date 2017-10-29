@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sam's Rental Service</title>
+    <link rel='stylesheet' href='/webjars/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/controllers.js"></script>
+    <script src="app/services.js"></script>
+    <script src="where.js"></script>
+    <script type="text/javascript">
+        function goBack() {
+            window.open("where.html");
+            return false;
+        }
+    </script>
+
+    <style>
+
+        body::after {
+            content: "";
+            background: url("img/1.jpg");
+            background-size: cover;
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        h1 {
+            text-align: center;
+            color: #CEF0D4;
+            font-family: 'Rouge Script', cursive;
+            font-size: 100px;
+            font-weight: normal;
+            line-height: 48px;
+            margin: 0 0 50px;
+            text-align: center;
+            text-shadow: 1px 1px 2px #082b34;
+        }
+
+        #div1 {
+            float: left;
+            margin-top: 5%;
+            width: 15%;
+        }
+
+        #div2 {
+            float: right;
+            width: 80%;
+        }
+
+        table {
+            color: #333;
+            font-family: Helvetica, Arial, sans-serif;
+            width: 640px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            background: transparent;
+        }
+
+        td, th {
+            /*border: 1px solid transparent; !* No more visible border *!*/
+            height: 30px;
+            transition: all 0.3s; /* Simple transition for hover effect */
+            background: transparent;
+            text-align: center;
+        }
+
+        a {
+            color: slateblue;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #a7e8f8;
+            text-decoration: underline;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        td, th {
+            text-align: center;
+            background: transparent;
+        }
+
+        tr td:hover {
+            background: #666;
+            color: #FFF;
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            font-size: 80%;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            background: transparent;
+        }
+
+        /* Set a style for all buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            background: transparent;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 16px;
+            width: 100%;
+
+        }
+
+        .btn {
+            background: #3498db;
+            background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+            background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+            background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+            background-image: -o-linear-gradient(top, #3498db, #2980b9);
+            background-image: linear-gradient(to bottom, #3498db, #2980b9);
+            -webkit-border-radius: 28;
+            -moz-border-radius: 28;
+            border-radius: 28px;
+            font-family: Arial;
+            color: #ffffff;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #3cb0fd;
+            background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+            text-decoration: none;
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+
+    </style>
+
+
+</head>
+<body ng-app="myApp">
+
+<div class="container" ng-controller="myCtrl as mc">
+    <h1>Sam's Rental Service</h1>
+    <div id="div1">
+        <input type="text" id="zip" ng-model="zip" placeholder="Enter city name or zip">
+        <button class="btn" type="submit" ng-click="mc.findAdByZipCode(zip)">Search</button>
+        <button class="btn" onclick="goBack()">Get Map View</button>
+        <div>
+            <input type="text" ng-model="globalSearch.description" placeholder="Describe your requests">
+            <input type="text" ng-model="price" placeholder="Maximum price">
+            <div ng-if="mc.ads.length > 0">
+                <p style="color: blue">Found <strong>{{mc.ads.length}}</strong> house informations.</p>
+            </div>
+            <div ng-if="mc.ads.length == 0">
+                <p style="color: red">No rental found.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="div2">
+        <div>
+            <table style="width:90%">
+                <thead>
+                <tr>
+                    <th>Price</th>
+                    <th>Model</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tr ng-repeat="ad in mc.ads | filter:globalSearch | filter:lessThan">
+                    <td>${{ad.price}}</td>
+                    <td>{{ad.model}}</td>
+                    <td>{{ad.location}}</td>
+                    <td><a href="{{ad.url}}" target="_blank"><strong>{{ad.description}}></strong></a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+
+
+
+
+
+
+

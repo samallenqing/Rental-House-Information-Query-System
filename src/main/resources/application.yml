@@ -1,0 +1,12 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: qq.rental
+  datasource:
+    url: jdbc:mysql://localhost:3306/craigslist?autoReconnect=true&useSSL=false
+    username: root
+    password: 1
+  jpa:
+    hibernate:
+      ddl-auto: none
